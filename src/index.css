@@ -3,11 +3,60 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.layout {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+.sidebar {
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0; /* Keeps it fixed at the top while scrolling */
+  height: 100vh; /* Full height of the viewport */
+  width: 40%;
+  overflow-y: auto; /* Optional: allows the sidebar to scroll if content exceeds the height */
+}
+
+.title {
+    font-size: 3.2em; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    color: white; /* White color */
+    margin: 20% 0 2.5% 20%; 
+    text-align: left;
+}
+
+.subtitle {
+  font-size: 1.5em; /* Increase font size */
+  color: white; /* White color */
+  margin: 0 0 0 20%;
+  text-align: left;
+}
+
+.main-content {
+  background-color: #1a1a1a;
+  height: 100vh; /* Full viewport height */
+  width: 60%;
+  overflow-y: scroll; /* Enables vertical scrolling within the main content */
+}
+
+button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+section {
+  padding: 60px 0;
 }
