@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  color: #fff;
 }
 
 .layout {
@@ -16,20 +17,17 @@ body {
   top: 0; /* Keeps it fixed at the top while scrolling */
   height: 100vh; /* Full height of the viewport */
   width: 40%;
-  overflow-y: auto; /* Optional: allows the sidebar to scroll if content exceeds the height */
 }
 
 .title {
     font-size: 3.2em; /* Increase font size */
     font-weight: bold; /* Make text bold */
-    color: white; /* White color */
     margin: 20% 0 2.5% 20%; 
     text-align: left;
 }
 
 .subtitle {
   font-size: 1.5em; /* Increase font size */
-  color: white; /* White color */
   margin: 0 0 0 20%;
   text-align: left;
 }
@@ -41,20 +39,54 @@ body {
   overflow-y: scroll; /* Enables vertical scrolling within the main content */
 }
 
-button {
-  background-color: #555;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px 0;
-  cursor: pointer;
-  width: 100%;
-  font-size: 1em;
-  text-align: center;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20% 0 0 20%;
 }
 
-button:hover {
-  background-color: #777;
+.menu-button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #b1b1b1;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: left;
+}
+
+.menu-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.menu-button:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.menu-button:hover::after {
+  width: 50%;
+}
+
+.menu-button.active {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.menu-button.active::after {
+  width: 50%; 
 }
 
 section {
