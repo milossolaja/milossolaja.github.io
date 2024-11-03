@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
 
 
@@ -6,15 +6,52 @@ const Layout = () => {
 
     const [activeSection, setActiveSection] = useState(null);
 
-    const section1Ref = useRef(null);
-    const section2Ref = useRef(null);
-    const section3Ref = useRef(null);
+    const sectionRefs = {
+        1: useRef(null),
+        2: useRef(null),
+        3: useRef(null),
+      };
   
-    const scrollToSection = (sectionRef, sectionNum) => {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    const scrollToSection = (sectionNum) => {
+      sectionRefs[sectionNum].current.scrollIntoView({ behavior: "smooth" });
 
       setActiveSection(sectionNum);
     };
+
+    const observeSections = () => {
+        const observerOptions = {
+            root: null, 
+            rootMargin: "0px",
+            threshold: 0.5, // Trigger when 50% of the section is visible
+          };
+  
+          const observerCallback = (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const sectionNumber = entry.target.getAttribute("data-section");
+                  setActiveSection(parseInt(sectionNumber, 10));
+                }
+              });
+            };
+  
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+            // Observe each section
+            Object.values(sectionRefs).forEach((ref) => {
+              if (ref.current) observer.observe(ref.current);
+            });
+        
+            // Cleanup observer on component unmount
+            return () => {
+              Object.values(sectionRefs).forEach((ref) => {
+                if (ref.current) observer.unobserve(ref.current);
+              });
+            };
+    }
+
+    useEffect(() => {
+        observeSections();
+    });
 
     return (
       <div className="layout">
@@ -22,27 +59,27 @@ const Layout = () => {
           <div className="title">Milos Solaja</div>
           <div className="subtitle">AI and ML Researcher and Developer</div>
           <div class="menu">
-          <button onClick={() => scrollToSection(section1Ref, 1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>Section 1</button>
-          <button onClick={() => scrollToSection(section2Ref, 2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Section 2</button>
-          <button onClick={() => scrollToSection(section3Ref, 3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Section 3</button>
+          <button onClick={() => scrollToSection(1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>Section 1</button>
+          <button onClick={() => scrollToSection(2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Section 2</button>
+          <button onClick={() => scrollToSection(3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Section 3</button>
           </div>
         </aside>
         <main className="main-content">
-            <section ref={section1Ref}>
+            <section ref={sectionRefs[1]} data-section="1">
             <h1>Section 1</h1>
             {/* Add more content to demonstrate scrolling */}
             {[...Array(20)].map((_, i) => (
             <p key={i}>This is line {i + 1} of scrollable content.</p>
             ))}
             </section>
-            <section ref={section2Ref}>
+            <section ref={sectionRefs[2]} data-section="2">
             <h1>Section 2</h1>
             {/* Add more content to demonstrate scrolling */}
             {[...Array(20)].map((_, i) => (
             <p key={i}>This is line {i + 1} of scrollable content.</p>
             ))}
             </section>
-            <section ref={section3Ref}>
+            <section ref={sectionRefs[3]} data-section="3">
             <h1>Section 3</h1>
             {/* Add more content to demonstrate scrolling */}
             {[...Array(20)].map((_, i) => (
