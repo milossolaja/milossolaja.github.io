@@ -8,7 +8,7 @@ body {
 
 .layout {
   display: flex;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 
 .sidebar {
@@ -90,5 +90,18 @@ body {
 }
 
 section {
-  padding: 60px 0;
+  padding: 20px 0;
+}
+
+.hover-box {
+  padding: 20px;
+  width: 80%;
+  background-color: #1a1a1a; /* Default color */
+  color: #fff;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.hover-box:hover {
+  background-color: rgb(255, 55, 0, 0.5); /* Hover color */
 }

@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
+import Box from "./Box"
 
 
 const Layout = () => {
@@ -59,32 +60,33 @@ const Layout = () => {
           <div className="title">Milos Solaja</div>
           <div className="subtitle">AI and ML Researcher and Developer</div>
           <div class="menu">
-          <button onClick={() => scrollToSection(1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>Section 1</button>
-          <button onClick={() => scrollToSection(2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Section 2</button>
-          <button onClick={() => scrollToSection(3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Section 3</button>
+            <button onClick={() => scrollToSection(1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>About</button>
+            <button onClick={() => scrollToSection(2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Experience</button>
+            <button onClick={() => scrollToSection(3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Projects</button>
           </div>
         </aside>
         <main className="main-content">
             <section ref={sectionRefs[1]} data-section="1">
-            <h1>Section 1</h1>
-            {/* Add more content to demonstrate scrolling */}
+            <h1>About</h1>
             {[...Array(20)].map((_, i) => (
             <p key={i}>This is line {i + 1} of scrollable content.</p>
             ))}
             </section>
             <section ref={sectionRefs[2]} data-section="2">
-            <h1>Section 2</h1>
-            {/* Add more content to demonstrate scrolling */}
+            <h1>Experience</h1>
+            <Box>
             {[...Array(20)].map((_, i) => (
             <p key={i}>This is line {i + 1} of scrollable content.</p>
             ))}
+            </Box>
             </section>
             <section ref={sectionRefs[3]} data-section="3">
-            <h1>Section 3</h1>
-            {/* Add more content to demonstrate scrolling */}
+            <h1>Projects</h1>
+            <Box>
             {[...Array(20)].map((_, i) => (
             <p key={i}>This is line {i + 1} of scrollable content.</p>
             ))}
+            </Box>
             </section>
         </main>
       </div>
