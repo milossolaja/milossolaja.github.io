@@ -1,6 +1,7 @@
 import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
 import Box from "./Box"
+import {TfiLinkedin} from "react-icons/tfi"
 
 
 const Layout = () => {
@@ -57,12 +58,17 @@ const Layout = () => {
     return (
       <div className="layout">
         <aside className="sidebar">
-          <div className="title">Milos Solaja</div>
+          <div className="title">Miloš Šolaja</div>
           <div className="subtitle">AI and ML Researcher and Developer</div>
           <div class="menu">
             <button onClick={() => scrollToSection(1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>About</button>
             <button onClick={() => scrollToSection(2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Experience</button>
             <button onClick={() => scrollToSection(3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Projects</button>
+          </div>
+          <div className="contact-grid">
+            <button className="contact-button">
+                <TfiLinkedin />
+            </button>
           </div>
         </aside>
         <main className="main-content">
