@@ -110,7 +110,8 @@ section {
 }
 
 .contact-grid {
-  position: fixed;
+  display: flex;
+  margin: 20% 0 0 20%;
   background-color: #1a1a1a;
 }
 

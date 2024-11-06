@@ -1,7 +1,7 @@
 import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
 import Box from "./Box"
-import {TfiLinkedin} from "react-icons/tfi"
+import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle} from "react-icons/fa6"
 
 
 const Layout = () => {
@@ -67,7 +67,19 @@ const Layout = () => {
           </div>
           <div className="contact-grid">
             <button className="contact-button">
-                <TfiLinkedin />
+                <FaGithub />
+            </button>
+            <button className="contact-button">
+                <FaLinkedin />
+            </button>
+            <button className="contact-button">
+                <FaXTwitter />
+            </button>
+            <button className="contact-button">
+                <FaInstagram />
+            </button>
+            <button className="contact-button">
+                <FaGoogle />
             </button>
           </div>
         </aside>
