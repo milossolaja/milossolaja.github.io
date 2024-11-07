@@ -3,10 +3,11 @@ import "./index.css"
 import Box from "./Box"
 import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle} from "react-icons/fa6"
 
-
 const Layout = () => {
 
     const [activeSection, setActiveSection] = useState(null);
+    
+    const cursor = useRef(null);
 
     const sectionRefs = {
         1: useRef(null),
@@ -55,12 +56,31 @@ const Layout = () => {
         observeSections();
     });
 
+    
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+          if (cursor.current) {
+            const x = e.clientX;
+            const y = e.clientY;
+            cursor.current.style.setProperty('--x', `${x}px`);
+            cursor.current.style.setProperty('--y', `${y}px`);
+          }
+        };
+    
+        document.addEventListener('mousemove', handleMouseMove);
+    
+        return () => {
+          document.removeEventListener('mousemove', handleMouseMove);
+        };
+      }, []);
+    
     return (
-      <div className="layout">
+    <div className="layout">
+        <div ref={cursor} className="cursor-grad" />
         <aside className="sidebar">
           <div className="title">Miloš Šolaja</div>
           <div className="subtitle">AI and ML Researcher and Developer</div>
-          <div class="menu">
+          <div className="menu">
             <button onClick={() => scrollToSection(1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>About</button>
             <button onClick={() => scrollToSection(2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Experience</button>
             <button onClick={() => scrollToSection(3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Projects</button>
@@ -86,7 +106,7 @@ const Layout = () => {
         <main className="main-content">
             <section ref={sectionRefs[1]} data-section="1">
             <h1>About</h1>
-            {[...Array(20)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
             <p key={i}>This is line {i + 1} of scrollable content.</p>
             ))}
             </section>
