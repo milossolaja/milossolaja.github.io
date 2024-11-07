@@ -88,19 +88,19 @@ const Layout = () => {
             <button onClick={() => scrollToSection(3)} className={`menu-button ${activeSection === 3 ? "active" : ""}`}>Projects</button>
           </div>
           <div className="contact-grid">
-            <button className="contact-button">
+            <button className="contact-button" onClick={() => window.open("https://github.com/milos-sol", "_blank")}>
                 <FaGithub />
             </button>
-            <button className="contact-button">
+            <button className="contact-button" onClick={() => window.open("https://www.linkedin.com/in/milossolaja/", "_blank")}>
                 <FaLinkedin />
             </button>
-            <button className="contact-button">
+            <button className="contact-button" onClick={() => window.open("https://example.com", "_blank")}>
                 <FaXTwitter />
             </button>
-            <button className="contact-button">
+            <button className="contact-button" onClick={() => window.open("https://example.com", "_blank")}>
                 <FaInstagram />
             </button>
-            <button className="contact-button">
+            <button className="contact-button" onClick={() => window.open("https://example.com", "_blank")}>
                 <FaGoogle />
             </button>
           </div>
