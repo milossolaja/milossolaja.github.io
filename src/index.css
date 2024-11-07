@@ -24,13 +24,20 @@ body {
 .title {
     font-size: 3em; /* Increase font size */
     font-weight: bold; /* Make text bold */
-    margin: 20% 0 2.5% 20%; 
+    margin: 20% 0 0 20%; 
     text-align: left;
 }
 
 .subtitle {
   font-size: 1.5em; /* Increase font size */
-  margin: 0 0 0 20%;
+  margin: 2.5% 0 0 20%;
+  text-align: left;
+}
+
+.second-subtitle {
+  font-size: 1em;
+  font-weight: lighter;
+  margin: 2.5% 0 0 20%;
   text-align: left;
 }
 
@@ -47,7 +54,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 20% 0 0 20%;
+  margin: 10% 0 0 20%;
 }
 
 .menu-button {
@@ -138,9 +145,32 @@ section {
   position: absolute;
   top: var(--y); 
   left: var(--x);
-  background-image: linear-gradient(#ff5e00 30%, #ffb300);
-  filter: blur(200px);
+  background-image: linear-gradient(#ff8400 30%, #ff0000);
+  filter: blur(400px);
   pointer-events: none;
   z-index: 10; 
   transform: translate(-50%, -50%);
+}
+
+.resume-link {
+  display: flex;
+  align-items: center; 
+  color: #b1b1b1; 
+  text-decoration: none; 
+  transition: color 0.3s ease;
+  padding: 20px;
+}
+
+.resume-link:hover {
+  color: #ffffff; 
+}
+
+.resume-text {
+  font-size: 1rem; /* Larger text size */
+  font-weight: 600; /* Semi-bold text */
+}
+
+.resume-icon {
+  font-size: 1rem; /* Icon size */
+  margin-left: 0.5rem; /* Space between the text and the icon */
 }

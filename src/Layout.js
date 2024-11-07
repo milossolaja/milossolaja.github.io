@@ -1,7 +1,8 @@
 import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
 import Box from "./Box"
-import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle} from "react-icons/fa6"
+import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare} from "react-icons/fa6"
+import CV from "./pdf/CV.pdf"
 
 const Layout = () => {
 
@@ -80,6 +81,7 @@ const Layout = () => {
         <aside className="sidebar">
           <div className="title">Miloš Šolaja</div>
           <div className="subtitle">AI and ML Researcher and Developer</div>
+          <div className="second-subtitle">I build innovative AI and ML solutions to solve real-world challenges and drive technological advancements.</div>
           <div className="menu">
             <button onClick={() => scrollToSection(1)} className={`menu-button ${activeSection === 1 ? "active" : ""}`}>About</button>
             <button onClick={() => scrollToSection(2)} className={`menu-button ${activeSection === 2 ? "active" : ""}`}>Experience</button>
@@ -126,6 +128,10 @@ const Layout = () => {
             ))}
             </Box>
             </section>
+            <a href={CV} target="_blank" rel="noreferrer" className="resume-link">
+            <span className="resume-text">Get Full Resume</span>
+            <FaArrowUpRightFromSquare className="resume-icon" />
+            </a>
         </main>
       </div>
     );
