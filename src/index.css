@@ -13,7 +13,7 @@ body {
 }
 
 .sidebar {
-  background-color: #1a1a1a;
+  background-color: #222222;
   position: relative;
   top: 0; /* Keeps it fixed at the top while scrolling */
   height: 100vh; /* Full height of the viewport */
@@ -38,16 +38,16 @@ body {
   font-weight: lighter;
   margin: 2.5% 0 0 20%;
   text-align: left;
+  color: #b1b1b1
 }
 
 .main-content {
   position: relative;
-  background-color: #1a1a1a;
+  background-color: #222222;
   height: 100vh; /* Full viewport height */
   width: 60%;
   overflow-y: scroll; /* Enables vertical scrolling within the main content */
 }
-
 
 .menu {
   display: flex;
@@ -105,10 +105,17 @@ section {
 .hover-box {
   padding: 20px;
   width: 80%;
-  background-color: #1a1a1a; /* Default color */
+  background-color: #222222; /* Default color */
   color: #fff;
   border-radius: 8px;
   transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.text-main-content {
+  width: 75%;
+  margin: 80px 0 0 0;
+  background-color: #222222; /* Default color */
+  color: #b1b1b1;
 }
 
 .hover-box:hover {
@@ -121,7 +128,7 @@ section {
 .contact-grid {
   display: flex;
   margin: 20% 0 0 20%;
-  background-color: #1a1a1a;
+  background-color: #222222;
 }
 
 .contact-button {

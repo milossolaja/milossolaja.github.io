@@ -3,8 +3,19 @@ import "./index.css"
 import Box from "./Box"
 import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare} from "react-icons/fa6"
 import CV from "./pdf/CV.pdf"
+import content from './content';
+import Experience from "./Experience";
 
 const Layout = () => {
+
+    const experienceData = {
+        date: "March 2023 - August 2023",
+        title: "Position X",
+        company: "Company ABC",
+        description: "Developed a hyperautomation agent for social media content creation.",
+        technologies: ["React", "Next.js", "Node.js", "NLP"],
+        githubLink: "https://github.com/your-username/your-repo"
+      };
 
     const [activeSection, setActiveSection] = useState(null);
     
@@ -94,31 +105,31 @@ const Layout = () => {
             <button className="contact-button" onClick={() => window.open("https://www.linkedin.com/in/milossolaja/", "_blank")}>
                 <FaLinkedin />
             </button>
-            <button className="contact-button" onClick={() => window.open("https://example.com", "_blank")}>
+            <button className="contact-button" onClick={() => window.open("https://x.com/MilosSolaja", "_blank")}>
                 <FaXTwitter />
             </button>
-            <button className="contact-button" onClick={() => window.open("https://example.com", "_blank")}>
+            <button className="contact-button" onClick={() => window.open("https://instagram.com/milossolaja/", "_blank")}>
                 <FaInstagram />
             </button>
-            <button className="contact-button" onClick={() => window.open("https://example.com", "_blank")}>
+            <button className="contact-button" onClick={() => window.location.href = `mailto:${"milossolaja96@gmail.com"}?subject=${encodeURIComponent("Contact me")}&body=${encodeURIComponent("Hello, I would like to get in touch.")}`}>
                 <FaGoogle />
             </button>
           </div>
         </aside>
         <main className="main-content">
             <section ref={sectionRefs[1]} data-section="1">
-            <h1>About</h1>
-            {[...Array(5)].map((_, i) => (
-            <p key={i}>This is line {i + 1} of scrollable content.</p>
-            ))}
+            <div className="text-main-content">{content.bio}</div>
             </section>
             <section ref={sectionRefs[2]} data-section="2">
             <h1>Experience</h1>
-            <Box>
-            {[...Array(20)].map((_, i) => (
-            <p key={i}>This is line {i + 1} of scrollable content.</p>
-            ))}
-            </Box>
+            <Experience
+                date={experienceData.date}
+                title={experienceData.title}
+                company={experienceData.company}
+                description={experienceData.description}
+                technologies={experienceData.technologies}
+                githubLink={experienceData.githubLink}
+            />
             </section>
             <section ref={sectionRefs[3]} data-section="3">
             <h1>Projects</h1>
