@@ -1,73 +1,58 @@
 /* Transparent box initially, glassy on hover */
-.experience-box {
+.project-box {
     display: block;
     padding: 16px;
     margin: 16px 0;
     width: 75%;
     border-radius: 12px;
-    background: transparent; 
+    background: transparent;
     text-decoration: none;
   }
   
-  .experience-box:hover {
-    background: rgba(255, 255, 255, 0.1);
+  .project-box:hover {
+    background: rgba(255, 255, 255, 0.1); /* Glassy effect on hover */
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 
-  .experience-box:hover .experience-title {
+  .project-box:hover .project-title {
     color: #ff3c00; /* Orange on hover */
   }
   
-  /* Container for two-column layout */
-  .experience-container {
+  /* Content styling */
+  .project-content {
     display: grid;
-    grid-template-columns: 200px 1fr; /* Left column for date, right for content */
-    gap: 14px;
-    align-items: start;
-  }
-  
-  /* Date styling - aligned in left column */
-  .experience-date {
-    font-size: 14px;
-    color: #b1b1b1;
-    align-self: start;
-    margin-top: 18px;
-  }
-  
-  /* Content styling - right column */
-  .experience-content {
     flex-direction: column;
   }
   
   /* Title styling */
-  .experience-title {
+  .project-title {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
   }
   
-  /* Company name styling */
-  .experience-company {
+  /* Institution styling */
+  .project-institution {
     font-size: 16px;
     color: #b1b1b1;
   }
   
   /* Description styling */
-  .experience-description {
+  .project-description {
     font-size: 16px;
     color: #b1b1b1;
   }
   
   /* Technologies section */
-  .experience-technologies {
+  .project-technologies {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
   
   /* Tech bubble styling */
-  .tech-bubble {
+  .project-tech-bubble {
     padding: 6px 12px;
     border-radius: 16px;
     background-color: #ff3c00;

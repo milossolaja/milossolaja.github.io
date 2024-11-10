@@ -1,10 +1,10 @@
 import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
-import Box from "./Box"
 import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare} from "react-icons/fa6"
 import CV from "./pdf/CV.pdf"
 import content from './content';
 import Experience from "./Experience";
+import Project from "./Project";
 
 const Layout = () => {
 
@@ -15,6 +15,15 @@ const Layout = () => {
         description: "Developed a hyperautomation agent for social media content creation.",
         technologies: ["React", "Next.js", "Node.js", "NLP"],
         githubLink: "https://github.com/your-username/your-repo"
+      };
+
+    const projectData = {
+        timeline: "March 2023 - August 2023",
+        title: "Project X",
+        institution: "Company ABC",
+        description: "Developed a hyperautomation agent for social media content creation.",
+        technologies: ["React", "Next.js", "Node.js", "NLP"],
+        projectLink: "https://github.com/your-username/your-repo"
       };
 
     const [activeSection, setActiveSection] = useState(null);
@@ -133,11 +142,14 @@ const Layout = () => {
             </section>
             <section ref={sectionRefs[3]} data-section="3">
             <h1>Projects</h1>
-            <Box>
-            {[...Array(20)].map((_, i) => (
-            <p key={i}>This is line {i + 1} of scrollable content.</p>
-            ))}
-            </Box>
+            <Project 
+                title={projectData.title}
+                timeline={projectData.timeline}
+                institution={projectData.institution}
+                description={projectData.description}
+                technologies={projectData.technologies}
+                projectLink={projectData.projectLink}
+            />
             </section>
             <a href={CV} target="_blank" rel="noreferrer" className="resume-link">
             <span className="resume-text">Get Full Resume</span>
