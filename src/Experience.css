@@ -57,6 +57,7 @@
   .experience-description {
     font-size: 16px;
     color: #b1b1b1;
+    white-space: pre-line;
   }
   
   /* Technologies section */

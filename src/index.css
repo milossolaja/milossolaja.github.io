@@ -21,7 +21,7 @@ body {
 }
 
 .title {
-    font-size: 3em; /* Increase font size */
+    font-size: 2.5em; /* Increase font size */
     font-weight: bold; /* Make text bold */
     margin: 20% 0 0 20%; 
     text-align: left;
@@ -87,6 +87,7 @@ body {
 
 .menu-button:hover::after {
   width: 50%;
+  background-color: #ff3c00;
 }
 
 .menu-button.active {
@@ -96,6 +97,7 @@ body {
 
 .menu-button.active::after {
   width: 50%; 
+  background-color: #ff3c00;
 }
 
 section {
@@ -179,4 +181,16 @@ section {
 .resume-icon {
   font-size: 1rem; /* Icon size */
   margin-left: 0.5rem; /* Space between the text and the icon */
+}
+
+.content-link {
+  color: white; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content-link:hover {
+  color: #ff3c00;
+  text-decoration: none;
+  font-weight: bold;
 }

@@ -30,6 +30,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #fff;
+    white-space: pre-line;
   }
   
   /* Institution styling */
@@ -38,20 +39,28 @@
     color: #b1b1b1;
   }
   
-  /* Description styling */
+  .project-position {
+    font-size: 16px;
+    color: #b1b1b1; 
+  }
+
+  .project-timeline {
+    font-size: 14px;
+    color: #b1b1b1;
+  }
+
   .project-description {
     font-size: 16px;
     color: #b1b1b1;
+    white-space: pre-line;
   }
   
-  /* Technologies section */
   .project-technologies {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
   
-  /* Tech bubble styling */
   .project-tech-bubble {
     padding: 6px 12px;
     border-radius: 16px;

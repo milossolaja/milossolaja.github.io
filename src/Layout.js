@@ -2,29 +2,11 @@ import React, {useRef, useState, useEffect} from "react";
 import "./index.css"
 import {FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare} from "react-icons/fa6"
 import CV from "./pdf/CV.pdf"
-import content from './content';
+import {content, experienceData1, experienceData2, projectData1, projectData2} from './content';
 import Experience from "./Experience";
 import Project from "./Project";
 
 const Layout = () => {
-
-    const experienceData = {
-        date: "March 2023 - August 2023",
-        title: "Position X",
-        company: "Company ABC",
-        description: "Developed a hyperautomation agent for social media content creation.",
-        technologies: ["React", "Next.js", "Node.js", "NLP"],
-        githubLink: "https://github.com/your-username/your-repo"
-      };
-
-    const projectData = {
-        timeline: "March 2023 - August 2023",
-        title: "Project X",
-        institution: "Company ABC",
-        description: "Developed a hyperautomation agent for social media content creation.",
-        technologies: ["React", "Next.js", "Node.js", "NLP"],
-        projectLink: "https://github.com/your-username/your-repo"
-      };
 
     const [activeSection, setActiveSection] = useState(null);
     
@@ -99,7 +81,7 @@ const Layout = () => {
     <div className="layout">
         <div ref={cursor} className="cursor-grad" />
         <aside className="sidebar">
-          <div className="title">Miloš Šolaja</div>
+          <div className="title">MILOŠ ŠOLAJA</div>
           <div className="subtitle">AI and ML Researcher and Developer</div>
           <div className="second-subtitle">I build innovative AI and ML solutions to solve real-world challenges and drive technological advancements.</div>
           <div className="menu">
@@ -127,28 +109,62 @@ const Layout = () => {
         </aside>
         <main className="main-content">
             <section ref={sectionRefs[1]} data-section="1">
-            <div className="text-main-content">{content.bio}</div>
+            <div className="text-main-content">
+              {content.bio.map((item, index) =>
+                  typeof item === "string" ? (
+                    item
+                  ) : (
+                    <a
+                      key={index}
+                      href={item.href}
+                      className="content-link hover:font-semibold"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.text}
+                    </a>
+                  )
+                )}
+            </div>
             </section>
             <section ref={sectionRefs[2]} data-section="2">
             <h1>Experience</h1>
             <Experience
-                date={experienceData.date}
-                title={experienceData.title}
-                company={experienceData.company}
-                description={experienceData.description}
-                technologies={experienceData.technologies}
-                githubLink={experienceData.githubLink}
+                date={experienceData1.date}
+                title={experienceData1.title}
+                company={experienceData1.company}
+                description={experienceData1.description}
+                technologies={experienceData1.technologies}
+                githubLink={experienceData1.githubLink}
+            />
+            <Experience
+                date={experienceData2.date}
+                title={experienceData2.title}
+                company={experienceData2.company}
+                description={experienceData2.description}
+                technologies={experienceData2.technologies}
+                githubLink={experienceData2.githubLink}
             />
             </section>
             <section ref={sectionRefs[3]} data-section="3">
             <h1>Projects</h1>
             <Project 
-                title={projectData.title}
-                timeline={projectData.timeline}
-                institution={projectData.institution}
-                description={projectData.description}
-                technologies={projectData.technologies}
-                projectLink={projectData.projectLink}
+                title={projectData1.title}
+                position={projectData1.position}
+                timeline={projectData1.timeline}
+                institution={projectData1.institution}
+                description={projectData1.description}
+                technologies={projectData1.technologies}
+                projectLink={projectData1.projectLink}
+            />
+            <Project 
+                title={projectData2.title}
+                position={projectData2.position}
+                timeline={projectData2.timeline}
+                institution={projectData2.institution}
+                description={projectData2.description}
+                technologies={projectData2.technologies}
+                projectLink={projectData2.projectLink}
             />
             </section>
             <a href={CV} target="_blank" rel="noreferrer" className="resume-link">
