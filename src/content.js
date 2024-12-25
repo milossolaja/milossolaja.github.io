@@ -1,18 +1,43 @@
 const content = {
   bio: [
-    "Recent graduate with a ",
-    {
-      text: "Master's in Robotics, Cognition and Intelligence",
-      href: "https://www.tum.de/",
-    },
-    ", complemented by a ",
-    {
-      text: "Bachelor's in Mechanical Engineering",
-      href: "https://example.com/mechanical-engineering",
-    },
-    " demonstrating a keen interest in AI and ML. Working experience in both industry and academia, showcasing a passion for creative problem-solving and strong teamwork abilities. Openness to taking on both technical and project management responsibilities within projects.",
+    [
+      "As a recent graduate with a ",
+      {
+        text: "Master's in Robotics, Cognition and Intelligence",
+        href: "https://www.tum.de/",
+      },
+      ", and a ",
+      {
+        text: "Bachelor's in Mechanical Engineering",
+        href: "https://example.com/mechanical-engineering",
+      },
+      ", I have developed a strong passion for AI and ML. My experience spans both industry and academia, where I've honed my problem-solving skills and ability to work collaboratively in teams.",
+    ],
+    [
+      "With a solid foundation in machine learning and AI, I am proficient in tools like ", 
+      {
+        text: "PyTorch",
+        href: "https://pytorch.org/",
+      }, 
+      " along with other Python libraries such as ", 
+      {
+        text: "Pandas",
+        href: "https://pandas.pydata.org/",
+      }, 
+      " and ", 
+      {
+        text: "Scikit-learn",
+        href: "https://scikit-learn.org/stable/index.html",
+      }, 
+      ". I also have experience building web applications using React.js, Flask, and FastAPI, and am familiar with cloud platforms like Azure and AWS. My expertise extends to databases like MySQL and MongoDB, as well as development tools such as Git and Docker, allowing for efficient deployment and seamless collaboration.",
+    ],
+    [
+      "Feel free to reach out for opportunities to work together and explore how my skills can contribute to your projects."
+    ]
   ],
 };
+
+
 
 const experienceData1 = {
     date: "August 2023 - January 2024",
@@ -30,8 +55,8 @@ const experienceData1 = {
     description: `Conducted technology scouting and research in the field of emerging software technologies.
     Led the research, analysis, and evaluation of new technologies relevant to the BMW ecosystem, including prototype development.
     Developed prototypes:
-    - SSI Login Integration: Integrated Self-Sovereign Identity (SSI) login into the existing infrastructure to enhance authentication processes.
-    - Dynamic Ambient Light for In-Car Gaming: Designed a prototype to synchronize ambient lighting with in-car gaming experiences.`,
+    • SSI Login Integration: Integrated Self-Sovereign Identity (SSI) login into the existing infrastructure to enhance authentication processes.
+    • Dynamic Ambient Light for In-Car Gaming: Designed a prototype to synchronize ambient lighting with in-car gaming experiences.`,
     technologies: ["Android", "React", "Python", "Hyperledger", "Powerpoint"],
     githubLink: "https://github.com/your-username/your-repo"
   };
@@ -42,9 +67,9 @@ const projectData1 = {
     position: "Data Scientist",
     institution: "TUM.AI",
     description: `Part of TUM.AI Industry Phase 5
-    Project goal was to train a model that determines patient’s diagnosis based on answers from a predefined questionnaire
+    Project goal was to train a model that determines patient's diagnosis based on answers from a predefined questionnaire
     Developed a pipeline based on various NLP techniques (pattern matching, word embeddings, LLMs) for creating the dataset essential for model training`,
-    technologies: ["React", "Next.js", "Node.js", "NLP"],
+    technologies: ["Python", "PyTorch", "LLMs", "NLP", "Docker"],
     projectLink: "https://github.com/your-username/your-repo"
   };
 
