@@ -16,7 +16,7 @@
   }
 
   .experience-box:hover .experience-title {
-    color: #ff3c00; /* Orange on hover */
+    color: #ff3c00; 
   }
   
   /* Container for two-column layout */
@@ -26,8 +26,45 @@
     gap: 14px;
     align-items: start;
   }
+
+  /* Timeline styling */
+  .experience-row {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .timeline-container {
+    position: relative;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 54px;
+    left: 50%;
+    width: 1px;
+    height: calc(100%);
+    background-color: #ffffff;
+    transform: translateX(-50%);
+  }
   
-  /* Date styling - aligned in left column */
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    top: 54px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }  
+  
+  /* Date styling */
   .experience-date {
     font-size: 14px;
     color: #b1b1b1;

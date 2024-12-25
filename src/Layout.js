@@ -149,7 +149,7 @@ const Layout = () => {
           <Experience {...experienceData2}/>
         </section>
         <section ref={sectionRefs[3]} data-section="3">
-          <h1>Projects</h1>
+          <h1 style={{ marginTop: '54px' }}>Projects</h1>
           <Project {...projectData1}/>
           <Project {...projectData2}/>
         </section>
