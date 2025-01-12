@@ -120,7 +120,7 @@ const Layout = () => {
           </div>
           <div className="contact-grid">
             {[
-              { href: "https://github.com/milos-sol", icon: FaGithub },
+              { href: "https://github.com/milossolaja", icon: FaGithub },
               { href: "https://www.linkedin.com/in/milossolaja/", icon: FaLinkedin },
               { href: "https://x.com/MilosSolaja", icon: FaXTwitter },
               { href: "https://instagram.com/milossolaja/", icon: FaInstagram },
