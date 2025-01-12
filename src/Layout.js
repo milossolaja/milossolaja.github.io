@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { content, experienceData1, experienceData2, projectData1, projectData2 } from './content';
+import Loadingpage from "./Loadingpage";
 import Experience from "./Experience";
 import Project from "./Project";
 import CV from "./pdf/CV.pdf";
@@ -9,6 +10,7 @@ import "./index.css"
 const Layout = () => {
 
   const [activeSection, setActiveSection] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const cursor = useRef(null);
 
@@ -77,6 +79,14 @@ const Layout = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const ContactButton = ({ href, icon: Icon }) => (
     <button className="contact-button" onClick={() => window.open(href, "_blank")}>
       <Icon />
@@ -90,9 +100,11 @@ const Layout = () => {
   );
 
   return (
+    loading ? <Loadingpage /> : 
     <div className="layout">
       <div ref={cursor} className="cursor-grad" />
       <aside className="sidebar">
+        <div className="logo-container"></div>
         <div className="title">MILOŠ ŠOLAJA</div>
         <div className="subtitle">AI & ML Researcher and Developer</div>
         <div className="second-subtitle">I build innovative AI and ML solutions to solve real-world <br /> challenges and drive technological advancements.</div>
