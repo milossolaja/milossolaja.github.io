@@ -4,7 +4,7 @@ import { content, experienceData1, experienceData2, projectData1, projectData2 }
 import Loadingpage from "./Loadingpage";
 import Experience from "./Experience";
 import Project from "./Project";
-import "./index.css"
+import "./layout.css"
 
 const Layout = () => {
 
