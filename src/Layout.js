@@ -1,14 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { content, experienceData1, experienceData2, projectData1, projectData2 } from './content';
+import Loadingpage from "./Loadingpage";
 import Experience from "./Experience";
 import Project from "./Project";
-import CV from "./pdf/CV.pdf";
-import "./index.css"
+import "./layout.css"
 
 const Layout = () => {
 
   const [activeSection, setActiveSection] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const cursor = useRef(null);
 
@@ -77,6 +78,14 @@ const Layout = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const ContactButton = ({ href, icon: Icon }) => (
     <button className="contact-button" onClick={() => window.open(href, "_blank")}>
       <Icon />
@@ -90,75 +99,83 @@ const Layout = () => {
   );
 
   return (
-    <div className="layout">
-      <div ref={cursor} className="cursor-grad" />
-      <aside className="sidebar">
-        <div className="title">MILOŠ ŠOLAJA</div>
-        <div className="subtitle">AI & ML Researcher and Developer</div>
-        <div className="second-subtitle">I build innovative AI and ML solutions to solve real-world <br /> challenges and drive technological advancements.</div>
-        <div className="menu">
-        {['About', 'Experience', 'Projects'].map((label, index) => (
-          <MenuButton
-            key={index}
-            section={index + 1}
-            activeSection={activeSection}
-            scrollToSection={scrollToSection}
-            label={label}
-          />
-        ))}
-      </div>
-      <div className="contact-grid">
-        {[
-          { href: "https://github.com/milos-sol", icon: FaGithub },
-          { href: "https://www.linkedin.com/in/milossolaja/", icon: FaLinkedin },
-          { href: "https://x.com/MilosSolaja", icon: FaXTwitter },
-          { href: "https://instagram.com/milossolaja/", icon: FaInstagram },
-          { href: `mailto:milossolaja96@gmail.com?subject=${encodeURIComponent("Contact me")}&body=${encodeURIComponent("Hello, I would like to get in touch.")}`, icon: FaGoogle }
-        ].map((contact, index) => (
-          <ContactButton key={index} {...contact} />
-        ))}
-      </div>
-      </aside>
-      <main className="main-content">
-        <section ref={sectionRefs[1]} data-section="1">
-          <div className="text-main-content">
-            {content.bio.map((paragraph, paragraphIndex) => (
-              <div key={paragraphIndex} className="paragraph">
-                {paragraph.map((item, itemIndex) =>
-                  typeof item === "string" ? (
-                    <span key={itemIndex}>{item}</span>
-                  ) : (
-                    <a
-                      key={itemIndex}
-                      href={item.href}
-                      className="content-link hover:font-semibold"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.text}
-                    </a>
-                  )
-                )}
-              </div>
+    loading ? <Loadingpage /> :
+      <div className="layout">
+        <div ref={cursor} className="cursor-grad" />
+        <aside className="sidebar">
+          <div className="logo-container"></div>
+          <div className="title">MILOŠ ŠOLAJA</div>
+          <div className="subtitle">AI & ML Researcher and Developer</div>
+          <div className="second-subtitle">I build innovative AI and ML solutions to solve real-world <br /> challenges and drive technological advancements.</div>
+          <div className="menu">
+            {['About', 'Experience', 'Projects'].map((label, index) => (
+              <MenuButton
+                key={index}
+                section={index + 1}
+                activeSection={activeSection}
+                scrollToSection={scrollToSection}
+                label={label}
+              />
             ))}
           </div>
-        </section>
-        <section ref={sectionRefs[2]} data-section="2">
-          <h1>Experience</h1>
-          <Experience {...experienceData1}/>
-          <Experience {...experienceData2}/>
-        </section>
-        <section ref={sectionRefs[3]} data-section="3">
-          <h1>Projects</h1>
-          <Project {...projectData1}/>
-          <Project {...projectData2}/>
-        </section>
-        <a href={CV} target="_blank" rel="noreferrer" className="resume-link">
-          <span className="resume-text">Get Full Resume</span>
-          <FaArrowUpRightFromSquare className="resume-icon" />
-        </a>
-      </main>
-    </div>
+          <div className="contact-grid">
+            {[
+              { href: "https://github.com/milos-sol", icon: FaGithub },
+              { href: "https://www.linkedin.com/in/milossolaja/", icon: FaLinkedin },
+              { href: "https://x.com/MilosSolaja", icon: FaXTwitter },
+              { href: "https://instagram.com/milossolaja/", icon: FaInstagram },
+              { href: `mailto:milossolaja96@gmail.com?subject=${encodeURIComponent("Contact me")}&body=${encodeURIComponent("Hello, I would like to get in touch.")}`, icon: FaGoogle }
+            ].map((contact, index) => (
+              <ContactButton key={index} {...contact} />
+            ))}
+          </div>
+        </aside>
+        <main className="main-content">
+          <section ref={sectionRefs[1]} data-section="1">
+            <div className="text-main-content">
+              {content.bio.map((paragraph, paragraphIndex) => (
+                <div key={paragraphIndex} className="paragraph">
+                  {paragraph.map((item, itemIndex) =>
+                    typeof item === "string" ? (
+                      item.includes("<br />") ? (
+                        item.split("<br />").map((part, index) => (
+                          <span key={index}>{part}<br /></span>
+                        ))
+                      ) : (
+                        <span key={itemIndex}>{item}</span>
+                      )
+                    ) : (
+                      <a
+                        key={itemIndex}
+                        href={item.href}
+                        className="content-link hover:font-semibold"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.text}
+                      </a>
+                    )
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+          <section ref={sectionRefs[2]} data-section="2">
+            <h1>Experience</h1>
+            <Experience {...experienceData1} />
+            <Experience {...experienceData2} />
+          </section>
+          <section ref={sectionRefs[3]} data-section="3">
+            <h1 style={{ marginTop: '54px' }}>Projects</h1>
+            <Project {...projectData1} />
+            <Project {...projectData2} />
+          </section>
+          <a href={'/pdf/CV.pdf'} target="_blank" rel="noreferrer" className="resume-link">
+            <span className="resume-text">Get Full Resume</span>
+            <FaArrowUpRightFromSquare className="resume-icon" />
+          </a>
+        </main>
+      </div>
   );
 };
 
