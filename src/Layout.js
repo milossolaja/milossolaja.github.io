@@ -4,7 +4,6 @@ import { content, experienceData1, experienceData2, projectData1, projectData2 }
 import Loadingpage from "./Loadingpage";
 import Experience from "./Experience";
 import Project from "./Project";
-import CV from "./pdf/CV.pdf";
 import "./index.css"
 
 const Layout = () => {
@@ -171,7 +170,7 @@ const Layout = () => {
             <Project {...projectData1} />
             <Project {...projectData2} />
           </section>
-          <a href={CV} target="_blank" rel="noreferrer" className="resume-link">
+          <a href={'/pdf/CV.pdf'} target="_blank" rel="noreferrer" className="resume-link">
             <span className="resume-text">Get Full Resume</span>
             <FaArrowUpRightFromSquare className="resume-icon" />
           </a>

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Project.css';
 
-const Project = ({ title, position, institution, timeline, description, technologies, projectLink }) => {
+const Project = ({ title, position, institution, timeline, description, technologies, pdfLink }) => {
   return (
-    <a href={projectLink} target="_blank" rel="noopener noreferrer" className="project-box">
+    <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="project-box">
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
         <p className="project-position">{position}</p> 

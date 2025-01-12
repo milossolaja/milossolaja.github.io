@@ -1,7 +1,7 @@
 import React from 'react';
 import './Experience.css';
 
-const Experience = ({ date, title, company, description, technologies, githubLink}) => {
+const Experience = ({ date, title, company, description, technologies, pdfLink}) => {
   return (
     <div className="experience-row">
       <div className="timeline-container">
@@ -9,7 +9,7 @@ const Experience = ({ date, title, company, description, technologies, githubLin
         <div className="timeline-dot" style={{top: '90%;'}}></div>
       </div>
 
-      <a href={githubLink} target="_blank" rel="noopener noreferrer" className="experience-box">
+      <a href={pdfLink} target="_blank" rel="noopener noreferrer" className="experience-box">
         <div className="experience-container">
           <p className="experience-date">{date}</p>
           <div className="experience-content">
