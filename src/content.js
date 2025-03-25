@@ -78,35 +78,34 @@ const experienceData2 = {
 
 const projectData1 = {
     timeline: "September 2023 - December 2023",
-    title: `Project “The Intelligent Anamnesis”`,
+    title: `Project "The Intelligent Anamnesis"`,
     position: "Data Scientist",
     institution: "TUM.AI",
-    description: `Part of TUM.AI Industry Phase 5
-    Project goal was to train a model that determines patient's diagnosis based on answers from a predefined questionnaire
-    Developed a pipeline based on various NLP techniques (pattern matching, word embeddings, LLMs) for creating the dataset essential for model training`,
+    description: `Part of TUM.AI Industry Phase 5.
+    Project goal was to train a model that determines patient's diagnosis based on answers from a predefined questionnaire.
+    Developed a pipeline based on various NLP techniques (pattern matching, word embeddings, LLMs) used for creating the dataset essential for model training.`,
     technologies: ["Python", "PyTorch", "LLMs", "NLP", "Docker"],
     pdfLink: "/pdf/TUM.AI.pdf"
   };
 
   const projectData2 = {
     timeline: "October 2022 - March 2023",
-    title: `Project “Hyperautomation for Marketing”`,
+    title: `Project "Hyperautomation for Marketing"`,
     position: "Project Lead",
     institution: "TU Munich",
-    description: `Completed a project as part of the Advanced Practical Course at the Chair of Robotics, Artificial Intelligence, and Real-Time Systems, TU Munich
-    Led a team that developed a prototype used to hyper-automate the creation and posting process of social media content with a self-improvement mechanism
-    The prototype takes text input and generates visually and content-wise appealing posts for social media, including images, short text, and hashtags`,
+    description: `Completed a project as part of the Advanced Practical Course at the Chair of Robotics, Artificial Intelligence, and Real-Time Systems, TU Munich.
+    Led a team that developed a prototype used to hyper-automate the creation and posting process of social media content with a self-improvement mechanism.
+    The prototype takes text input and generates visually and content-wise appealing posts for social media, including images, short text, and hashtags.`,
     technologies: ["Python", "PyTorch", "MongoDB", "GenAI", "ML/DL Models"],
     pdfLink: "/pdf/Hyperautomation.pdf"
   };
 
   const projectData3 = {
     timeline: "October 2019 - March 2020",
-    title: `Reaction Wheel Design for Cube Satellite`,
+    title: `Project "Reaction Wheel Design for Cube Satellite"`,
     position: "Software and Control",
     institution: "TU Munich",
-    description: `German title: "Entwurf, Betrieb und Bau von Kleinsatelliten"
-    The project included the design and development of fully functional reaction wheels for the MOVE satellite, a CubeSat used for space research.
+    description: `The project included the design and development of fully functional reaction wheels for the MOVE satellite, a CubeSat used for space research.
     Developed a controller for the motors within the reaction wheels to regulate movement and ensure precise satellite orientation in space.`,
     technologies: ["Arduino", "MATLAB", "Simulink"],
     pdfLink: "/pdf/Reaction_Wheel.pdf"
