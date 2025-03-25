@@ -46,6 +46,15 @@ const content = {
 };
 
 const experienceData1 = {
+    date: "April 2024 - Present",
+    title: "Freelance AI/ML & Full-Stack Developer",
+    company: "Freelance",
+    description: `Design, development and deployment of AI/ML-based systems and web & mobile applications.`,
+    technologies: ["Python", "PyTorch", "React", "FastAPI", "LLMs"],
+    pdfLink: ""
+  };
+
+const experienceData2 = {
     date: "August 2023 - January 2024",
     title: "Student Research Assistant and Master Thesis",
     company: "Fraunhofer IGCV",
@@ -54,7 +63,7 @@ const experienceData1 = {
     pdfLink: "/pdf/Fraunhofer_paper.pdf"
   };
 
-  const experienceData2 = {
+  const experienceData3 = {
     date: "February 2021 - September 2022",
     title: "Working Student - Research Department",
     company: "BMW AG",
@@ -91,4 +100,16 @@ const projectData1 = {
     pdfLink: "/pdf/Hyperautomation.pdf"
   };
 
-export {content, experienceData1, experienceData2, projectData1, projectData2};
+  const projectData3 = {
+    timeline: "October 2019 - March 2020",
+    title: `Reaction Wheel Design for Cube Satellite`,
+    position: "Software and Control",
+    institution: "TU Munich",
+    description: `German title: "Entwurf, Betrieb und Bau von Kleinsatelliten"
+    The project included the design and development of fully functional reaction wheels for the MOVE satellite, a CubeSat used for space research.
+    Developed a controller for the motors within the reaction wheels to regulate movement and ensure precise satellite orientation in space.`,
+    technologies: ["Arduino", "MATLAB", "Simulink"],
+    pdfLink: "/pdf/Reaction_Wheel.pdf"
+  }
+
+export {content, experienceData1, experienceData2, experienceData3, projectData1, projectData2, projectData3};

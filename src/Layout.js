@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { content, experienceData1, experienceData2, projectData1, projectData2 } from './content';
+import { content, experienceData1, experienceData2, experienceData3, projectData1, projectData2, projectData3} from './content';
 import Loadingpage from "./Loadingpage";
 import Experience from "./Experience";
 import Project from "./Project";
@@ -29,7 +29,7 @@ const Layout = () => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.7, // Trigger when 70% of the section is visible
+      threshold: 0.5, // Trigger when 60% of the section is visible
     };
 
     const observerCallback = (entries) => {
@@ -164,11 +164,13 @@ const Layout = () => {
             <h1>Experience</h1>
             <Experience {...experienceData1} />
             <Experience {...experienceData2} />
+            <Experience {...experienceData3} />
           </section>
           <section ref={sectionRefs[3]} data-section="3">
             <h1 style={{ marginTop: '54px' }}>Projects</h1>
             <Project {...projectData1} />
             <Project {...projectData2} />
+            <Project {...projectData3} />
           </section>
           <a href={'/pdf/CV.pdf'} target="_blank" rel="noreferrer" className="resume-link">
             <span className="resume-text">Get Full Resume</span>
