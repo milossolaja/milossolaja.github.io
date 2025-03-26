@@ -1,9 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaInstagram, FaXTwitter, FaGoogle, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { content, experienceData1, experienceData2, experienceData3, projectData1, projectData2, projectData3} from './content';
 import Loadingpage from "./Loadingpage";
 import Experience from "./Experience";
 import Project from "./Project";
+import ContactGrid from "./ContactGrid";
 import "./layout.css"
 
 const Layout = () => {
@@ -29,7 +30,7 @@ const Layout = () => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // Trigger when 60% of the section is visible
+      threshold: 0.5, // Trigger when 50% of the section is visible
     };
 
     const observerCallback = (entries) => {
@@ -86,12 +87,6 @@ const Layout = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const ContactButton = ({ href, icon: Icon }) => (
-    <button className="contact-button" onClick={() => window.open(href, "_blank")}>
-      <Icon />
-    </button>
-  );
-
   const MenuButton = ({ section, activeSection, scrollToSection, label }) => (
     <button onClick={() => scrollToSection(section)} className={`menu-button ${activeSection === section ? "active" : ""}`}>
       {label}
@@ -118,17 +113,7 @@ const Layout = () => {
               />
             ))}
           </div>
-          <div className="contact-grid">
-            {[
-              { href: "https://github.com/milossolaja", icon: FaGithub },
-              { href: "https://www.linkedin.com/in/milossolaja/", icon: FaLinkedin },
-              { href: "https://x.com/MilosSolaja", icon: FaXTwitter },
-              { href: "https://instagram.com/milossolaja/", icon: FaInstagram },
-              { href: `mailto:milossolaja96@gmail.com?subject=${encodeURIComponent("Contact me")}&body=${encodeURIComponent("Hello, I would like to get in touch.")}`, icon: FaGoogle }
-            ].map((contact, index) => (
-              <ContactButton key={index} {...contact} />
-            ))}
-          </div>
+          <ContactGrid />
         </aside>
         <main className="main-content">
           <section ref={sectionRefs[1]} data-section="1">

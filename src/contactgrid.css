@@ -1,0 +1,19 @@
+.contact-grid {
+    display: flex;
+    margin: 20% 0 0 20%;
+    background-color: #222222;
+  }
+  
+  .contact-button {
+    background: none;
+    border: none;
+    margin: 0 3px 0 3px;
+    font-size: 30px;
+    color: #b1b1b1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    color: #ffffff; 
+  }

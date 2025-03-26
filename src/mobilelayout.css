@@ -1,0 +1,23 @@
+.container-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #222222;
+  min-height: 90vh;
+  color: #b1b1b1;
+}
+
+.logo-mobile {
+  background-image: url('../public/logo.png'); 
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
